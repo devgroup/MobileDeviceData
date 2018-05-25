@@ -10,8 +10,9 @@ namespace ImportData
     {
         static void Main(string[] args)
         {
-            ImportOrgData importOrgData = new ImportOrgData();
-            importOrgData.ImportCityInfrasctureDivision();
+            ImportData importData = new ImportData();
+            //importData.ImportAllOrgData();
+            importData.ImportEverything();
 
         }
     }

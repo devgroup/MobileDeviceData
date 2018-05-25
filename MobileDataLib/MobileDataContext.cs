@@ -14,5 +14,10 @@ namespace MobileDataLib
 
         }
         public DbSet<DivisionDevice> DivisionDevices { get; set; }
+        public DbSet<BlitzRecord> BlitzRecords { get; set; }
+
+        public DbSet<FrancisData> FrancisData { get; set; }
+
+        public DbSet<CombinedRecord> CombinedRecords { get; set; }
     }
 }

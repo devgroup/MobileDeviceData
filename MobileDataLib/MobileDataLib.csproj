@@ -76,6 +76,7 @@
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Data.SqlClient, Version=4.2.0.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.4.3\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
@@ -85,45 +86,52 @@
     <Reference Include="System.Interactive.Async, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Interactive.Async.3.1.1\lib\net46\System.Interactive.Async.dll</HintPath>
     </Reference>
-    <Reference Include="System.Linq">
-      <HintPath>..\packages\System.Linq.4.1.0\lib\net463\System.Linq.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Linq.Expressions">
-      <HintPath>..\packages\System.Linq.Expressions.4.1.0\lib\net463\System.Linq.Expressions.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Reflection">
-      <HintPath>..\packages\System.Reflection.4.1.0\lib\net462\System.Reflection.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Runtime">
-      <HintPath>..\packages\System.Runtime.4.1.0\lib\net462\System.Runtime.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.4.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.Extensions">
-      <HintPath>..\packages\System.Runtime.Extensions.4.1.0\lib\net462\System.Runtime.Extensions.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlitzRecord.cs" />
+    <Compile Include="CombinedRecord.cs" />
     <Compile Include="DivisionDevice.cs" />
+    <Compile Include="FrancisData.cs" />
     <Compile Include="Migrations\201805230645392_InitialCreate.cs" />
     <Compile Include="Migrations\201805230645392_InitialCreate.Designer.cs">
       <DependentUpon>201805230645392_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805240534552_AddTableBlitzRecords.cs" />
+    <Compile Include="Migrations\201805240534552_AddTableBlitzRecords.Designer.cs">
+      <DependentUpon>201805240534552_AddTableBlitzRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805240636156_AddTableFrancisData.cs" />
+    <Compile Include="Migrations\201805240636156_AddTableFrancisData.Designer.cs">
+      <DependentUpon>201805240636156_AddTableFrancisData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805240749092_addCombinedRecordTable.cs" />
+    <Compile Include="Migrations\201805240749092_addCombinedRecordTable.Designer.cs">
+      <DependentUpon>201805240749092_addCombinedRecordTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805242221220_addFieldsCombinedRecord.cs" />
+    <Compile Include="Migrations\201805242221220_addFieldsCombinedRecord.Designer.cs">
+      <DependentUpon>201805242221220_addFieldsCombinedRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805242323378_alterFieldsCombinedRecord.cs" />
+    <Compile Include="Migrations\201805242323378_alterFieldsCombinedRecord.Designer.cs">
+      <DependentUpon>201805242323378_alterFieldsCombinedRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MobileDataContext.cs" />
+    <Compile Include="NameSanitizer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaffDirectoryEDM\Employee.cs" />
+    <Compile Include="StaffDirectoryEDM\StaffDirEDM.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -133,6 +141,25 @@
     <EmbeddedResource Include="Migrations\201805230645392_InitialCreate.resx">
       <DependentUpon>201805230645392_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805240534552_AddTableBlitzRecords.resx">
+      <DependentUpon>201805240534552_AddTableBlitzRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805240636156_AddTableFrancisData.resx">
+      <DependentUpon>201805240636156_AddTableFrancisData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805240749092_addCombinedRecordTable.resx">
+      <DependentUpon>201805240749092_addCombinedRecordTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805242221220_addFieldsCombinedRecord.resx">
+      <DependentUpon>201805242221220_addFieldsCombinedRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805242323378_alterFieldsCombinedRecord.resx">
+      <DependentUpon>201805242323378_alterFieldsCombinedRecord.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="BlitzDataCSVFormat.txt" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
